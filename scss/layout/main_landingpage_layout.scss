@@ -1,0 +1,25 @@
+/* Grid for the Landingpage Layout */
+
+
+.main{
+
+    display: grid;
+    grid-template:
+    "." 5%
+    "logo_area" 50%
+    "text_area" minmax(15em, 15%)
+    "buttons_area" 10%
+    "." 20%;
+
+    &__logo{
+        grid-area: logo_area;
+    }
+
+    &__text{
+        grid-area: text_area;
+    }
+
+    &__buttons{
+        grid-area: buttons_area;
+    }
+}

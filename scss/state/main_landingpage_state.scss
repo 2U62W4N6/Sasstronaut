@@ -1,0 +1,42 @@
+/* Handles the State Changes of the Main Landingpage */
+
+@import "../module/animations";
+@import "../module/vars";
+@import "../module/mixins";
+
+/* When you hover on the Logo */
+.logo:hover{
+
+    /* Border around the Logo becomes white*/
+    transition: 3s;
+    border: 3px solid white;
+
+    .logo{
+        
+        /* Accelerate the speed-duration by x8 */
+        $update-speed: $fire-speed / 8;
+
+        /* Let the Logo move up */
+        &__movecontainer{
+            animation: 3s move_up forwards;
+        }
+
+        /* Let the Logo shake */
+        &__shakecontainer{
+            animation: 0.5s shake ease-in-out infinite;
+        }
+
+        /* Update the firemovement by the new speed-duration */
+        &__fire{
+            animation-duration: $update_speed
+        }
+
+        &__fireMiddle{
+            animation-delay: $update_speed - ($update_speed / 3)
+        }
+
+        &__fireLower{
+            animation-delay: $update_speed - 2 * ($update_speed / 3)
+        }
+    }
+}

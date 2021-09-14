@@ -1,0 +1,43 @@
+/* Grid for the Page Layout (universal for all pages) */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+.page {
+  /* Fill the whole View */
+  min-height: 100vh;
+  /* Grid Template */
+  display: grid;
+  grid-template: "." 50px "main_area" minmax(50em, 1fr) "footer_area" 50px;
+  /* Attribute 'fixed' doesn't work on Grid-Items.
+  Header needs to be adjusted differently in the Grid-Template */
+  /* Empty Container which will contain absoulte items.
+  Will be used to create the Star-Background */
+}
+.page__header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+}
+.page__main {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  z-index: 0;
+  grid-area: main_area;
+}
+.page__footer {
+  z-index: 2;
+  grid-area: footer_area;
+}
+.page__stars {
+  z-index: 1;
+  height: 0%;
+  width: 0%;
+}
+
+/*# sourceMappingURL=page_layout.css.map */

@@ -1,0 +1,7 @@
+.btn:hover, .btn:hover::after {
+  border: 2px solid black;
+  transition: 1s;
+  background-position: 0;
+}
+
+/*# sourceMappingURL=page_global_state.css.map */

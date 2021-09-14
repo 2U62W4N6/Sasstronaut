@@ -1,0 +1,378 @@
+/* Handles the State Changes of the Main Landingpage */
+/* Animation-File */
+/* All used Animation will be stored here */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Shake-Animation on the Landingpage-Logo */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+/* Rocketfire-Animation on the Landingpage-Logo */
+@keyframes firemovement {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(6.3em, -0.5em);
+  }
+}
+/* Rocket-Animation on the Landingpage-Logo */
+@keyframes move_down {
+  from {
+    transform: translateY(-3.8em);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/* Rocket-Animation on the Landingpage-Logo */
+@keyframes move_up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3.8em);
+  }
+}
+/* Star-Animation on the whole Background */
+@keyframes starflow {
+  to {
+    transform: translateY(400vh);
+  }
+}
+/* Title Movement from the center of image to the box below (Card) */
+@keyframes movetitle {
+  0% {
+    text-align: center;
+    opacity: 1;
+  }
+  20% {
+    text-align: center;
+    opacity: 0;
+  }
+  50% {
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    top: 9em;
+    transform: scale(1.42);
+    color: black;
+  }
+  100% {
+    width: 100%;
+    text-align: left;
+    opacity: 1;
+    top: 12.3em;
+    transform: scale(1.42);
+    color: black;
+  }
+}
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Mixin-File */
+/* Modules for recurring patterns to write less css code */
+/* Functions to help out expensive calculations */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Mixin to define all nesseccary flex-settings of an element*/
+/* Mixin to define all nesseccary box-settings of an element*/
+/* Mixin to create $number of box-shadow, with size of $width, which will act as 'stars' */
+/* Function to calculate the position for each star - with $secondary-color color */
+/* X-Position will be a random position from 0 - 100vw */
+/* Y-Position will be a random position from -XXX to YYY (outside of the view)*/
+/* Function to define $number of values for the box-shadow */
+/* When you hover on the Logo */
+.logo:hover {
+  /* Border around the Logo becomes white*/
+  transition: 3s;
+  border: 3px solid white;
+}
+.logo:hover .logo {
+  /* Accelerate the speed-duration by x8 */
+  /* Let the Logo move up */
+  /* Let the Logo shake */
+  /* Update the firemovement by the new speed-duration */
+}
+.logo:hover .logo__movecontainer {
+  animation: 3s move_up forwards;
+}
+.logo:hover .logo__shakecontainer {
+  animation: 0.5s shake ease-in-out infinite;
+}
+.logo:hover .logo__fire {
+  animation-duration: 0.375s;
+}
+.logo:hover .logo__fireMiddle {
+  animation-delay: 0.25s;
+}
+.logo:hover .logo__fireLower {
+  animation-delay: 0.125s;
+}
+
+/* Base Style for the Landingpage */
+/* Mixin-File */
+/* Modules for recurring patterns to write less css code */
+/* Functions to help out expensive calculations */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Mixin to define all nesseccary flex-settings of an element*/
+/* Mixin to define all nesseccary box-settings of an element*/
+/* Mixin to create $number of box-shadow, with size of $width, which will act as 'stars' */
+/* Function to calculate the position for each star - with $secondary-color color */
+/* X-Position will be a random position from 0 - 100vw */
+/* Y-Position will be a random position from -XXX to YYY (outside of the view)*/
+/* Function to define $number of values for the box-shadow */
+/* Animation-File */
+/* All used Animation will be stored here */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Shake-Animation on the Landingpage-Logo */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+/* Rocketfire-Animation on the Landingpage-Logo */
+@keyframes firemovement {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(6.3em, -0.5em);
+  }
+}
+/* Rocket-Animation on the Landingpage-Logo */
+@keyframes move_down {
+  from {
+    transform: translateY(-3.8em);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/* Rocket-Animation on the Landingpage-Logo */
+@keyframes move_up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3.8em);
+  }
+}
+/* Star-Animation on the whole Background */
+@keyframes starflow {
+  to {
+    transform: translateY(400vh);
+  }
+}
+/* Title Movement from the center of image to the box below (Card) */
+@keyframes movetitle {
+  0% {
+    text-align: center;
+    opacity: 1;
+  }
+  20% {
+    text-align: center;
+    opacity: 0;
+  }
+  50% {
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    top: 9em;
+    transform: scale(1.42);
+    color: black;
+  }
+  100% {
+    width: 100%;
+    text-align: left;
+    opacity: 1;
+    top: 12.3em;
+    transform: scale(1.42);
+    color: black;
+  }
+}
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* The Logo */
+.logo {
+  /* width - height - background - padding - margin - border-color - border width - border-radius*/
+  width: 300px;
+  height: 300px;
+  background: black;
+  border: solid black 3px;
+  border-radius: 50%;
+  padding: 0%;
+  margin: 0%;
+  justify-self: center;
+  align-self: center;
+  transition: border 2s;
+  /* Delay the fire-elements depending on the animation speed */
+}
+.logo__movecontainer {
+  margin: 3em;
+  animation: 2s move_down ease-in-out forwards;
+}
+.logo__img {
+  padding-top: 1em;
+  width: 100%;
+  border-radius: 50%;
+}
+.logo__fires {
+  position: relative;
+}
+.logo__fire {
+  position: absolute;
+  /* width - height - background */
+  width: 5px;
+  height: 15px;
+  background: white;
+  border: solid black 0px;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  /* Create side-fire lines*/
+  box-shadow: -15px 10px white, 15px 10px white;
+  /* translate the absolute position below the rocket*/
+  transform: translate(6.3em, -3em);
+  /* animate the fire */
+  animation: 3s ease-in-out firemovement infinite;
+}
+.logo__fireMiddle {
+  animation-delay: 2s;
+}
+.logo__fireLower {
+  animation-delay: 1s;
+}
+
+/* Style the Text */
+.text {
+  align-self: flex-start;
+  justify-self: center;
+  width: 90%;
+}
+.text__phrase {
+  text-align: center;
+  background-clip: border-box;
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Style the Buttons */
+.buttons {
+  justify-self: center;
+  z-index: 2;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 80%;
+  height: 100%;
+  background: transparent;
+  border: solid black 0px;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+.buttons__button {
+  width: 10em;
+  height: 4em;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=main_landingpage_style.css.map */

@@ -1,0 +1,27 @@
+/* Grid for the Main Area (Header, Content)*/
+.main {
+  display: grid;
+  /* Colums on wide width */
+  grid-template: "header_area content_area"/300px 1fr;
+  /* Rows on narrow Screen */
+}
+@media (max-width: 1000px) {
+  .main {
+    grid-template: "header_area" "content_area";
+  }
+}
+.main__header {
+  grid-area: header_area;
+  height: 110%;
+}
+.main__content {
+  grid-area: content_area;
+  /* Card-Grid (Articles)*/
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding: 5em 0;
+  gap: 2em;
+}
+
+/*# sourceMappingURL=main_document_layout.css.map */

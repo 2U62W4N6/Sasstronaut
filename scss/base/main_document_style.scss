@@ -1,0 +1,156 @@
+/* Base Style for the Documentpage */
+@use "../state/main_document_state";
+@import "../module/mixins";
+@import "../module/vars";
+
+/* Side/Upper Navbar of the Main*/
+.mainheader{
+
+    background: $tertiary-color;
+
+    &__nav{
+        width: 100%;
+        list-style: none;
+    }
+
+    &__title{
+        width: 100%;
+        text-align: center;
+        margin: 1em 0;
+        color: white;
+    }
+
+    &__navlist{
+        width: 100%;
+        list-style: none;
+        @include flex-setting(row wrap, space-evenly, center)
+    }
+
+    &__navelement{
+        padding: 0.5em;
+        margin-bottom: 1em;
+        width: 240px;
+        border-top: solid 1px $secondary-color;
+        border-bottom: solid 1px $secondary-color; 
+        position: relative;
+        z-index: 1;
+        &::before{
+            transition: 250ms;
+            z-index: -1;
+            background-color: white;
+            position: absolute;
+            content: "";
+            top: 0;
+            left:0;
+            right:0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+    }
+
+    &__navlink{
+        position: relative;
+        text-align: center; 
+        color: white;
+    }
+
+
+
+}
+
+/* Maincontent (Cards) of the Main*/
+.card{
+    z-index: 4;
+    position: relative;
+    justify-self: center;
+    width: 450px;
+    padding: 1.5em;
+
+    @include flex-setting(row wrap, space-evenly, center);
+
+    /* Year as absolute, so it can be moved inside the content-block */
+    &__year{
+        align-self: flex-end;
+        width: 97.5%;
+        text-align: center;
+        color: $secondary-color;
+        transition: .3s;
+    }
+
+    /* Title as absolute, so it can be moved inside the content-block */
+    &__title{
+        position: absolute;
+        top: 45%;
+        z-index: 1;
+        text-shadow: -1px 0 $primary-color, 0 1px $primary-color, 1px 0 $primary-color, 0 -1px $primary-color;
+        color: $secondary-color;
+
+        transition: .3s;
+    }
+      
+    &__front{
+        position: relative;
+        @include box-setting(400px, 400px, $primary-color,0,0, $secondary-color, 5px, 50%);
+        @include flex-setting(row wrap);
+        align-self: flex-start;
+        justify-self: flex-start;
+        transition: .3s;
+    }
+
+    /* Blur img */
+    &__img{
+        @include box-setting(100%, 100%, $border-radius: 50%);
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+    }
+
+    /* Hide Back-Content until hover */
+    &__back{
+        opacity: 0;
+        @include flex-setting(row wrap, center, flex-start);
+        height: 0px;
+    }
+    
+    &__text{
+        padding: 0 1em;  
+        text-align: left;
+        width: 100%;
+    }
+
+    &__link{
+        padding: 1em;
+        width: 100%;
+        color: $primary-color;
+        text-decoration: underline;
+    }
+    &__headline{
+        @include flex-setting(row nowrap, space-between, center);
+        width: 100%;
+        margin: 0 .8em;
+        border-bottom: solid black 1px;
+        margin-bottom: 1em;
+    }
+    /* Hide Background until hover */
+    &__background{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 10%;
+        bottom: 0;
+        z-index: -1;
+        
+        @include box-setting(
+            $height: 85%,
+            $background: $secondary-color,
+            $border-radius: 90px,
+            $color: black,
+            $border-width: 5px
+        );
+        opacity: 0;
+    }
+
+}
+
+
+

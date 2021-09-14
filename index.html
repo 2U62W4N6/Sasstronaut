@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Sasstronaut</title>
+    <link rel="stylesheet" href="./css/layout/page_layout.css">
+    <link rel="stylesheet" href="./css/layout/main_landingpage_layout.css">
+    <link rel="stylesheet" href="./css/base/page_global_style.css">
+    <link rel="stylesheet" href="./css/base/main_landingpage_style.css">
+    <script src="./js/animation.js" defer></script>
+  </head>
+
+  <body class="page">
+
+    
+    <header class="page__header pageheader">
+      <a class="pageheader__homelink" href="">
+        <h1 class="pageheader__title">Sasstronaut</h1>
+      </a>
+    </header>
+
+    <main class="page__main main">
+
+    <div class="main__starbackground main__smallstars"></div>
+    <div class="main__starbackground main__mediumstars"></div>
+    <div class="main__starbackground main__bigstars"></div>
+
+
+
+      <div class="main__logo logo" onfocus="HoverIn()" onmouseover="HoverIn()" onmouseout="HoverOut()" onblur="HoverOut()">
+        <div class="logo__movecontainer">
+          <div class="logo__shakecontainer">
+            <img class="logo__img" src="./media/Rocket.png" alt="Sasstronaut Logo">
+            <div class="logo__fires">
+              <div class="logo__fire logo__fireUpper"></div>
+              <div class="logo__fire logo__fireMiddle"></div>
+              <div class="logo__fire logo__fireLower"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="main__text text">
+        <h2 class="text__phrase">Explore and discover some of the greatest milestones</h2>
+        <h2 class="text__phrase">Choose your first destination</h2>
+      </div>
+      
+      <div class="main__buttons buttons">
+        <button class="buttons__button btn" onclick="location.href='./usa.html'">USA</button>
+        <button class="buttons__button btn" onclick="location.href='./russia.html'">RUSSIA</button>
+      </div>
+      
+    </main>
+
+    <footer class="page__footer footer">
+      <p class="footer__text">Created by Schäran Byaniy</p>
+      <p class="footer__text">Sass Project SS 2020</p>
+    </footer>
+
+  </body>
+</html>

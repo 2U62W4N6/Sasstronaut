@@ -1,0 +1,81 @@
+/* Base Style for the Landingpage */
+@use "../state/main_landingpage_state";
+@import "../module/mixins";
+@import "../module/animations";
+@import "../module/vars";
+
+/* The Logo */
+.logo{
+    /* width - height - background - padding - margin - border-color - border width - border-radius*/
+    @include box-setting(300px, 300px, $primary-color, 0%, 0%, $primary-color, 3px, 50%);
+    justify-self: center;
+    align-self: center;
+    transition: border 2s;
+
+    &__movecontainer{
+        margin: 3em;
+        animation: 2s move_down ease-in-out forwards;
+    }
+
+    &__img{
+        padding-top: 1em;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    &__fires{
+        position: relative;
+    }
+
+    &__fire{
+        position: absolute;
+        /* width - height - background */
+        @include  box-setting(5px, 15px, $secondary-color);
+        /* Create side-fire lines*/
+        box-shadow: -15px 10px $secondary-color, 15px 10px $secondary-color;
+        /* translate the absolute position below the rocket*/
+        transform: translate(6.3em,-3em);
+        /* animate the fire */
+        animation: $fire-speed  ease-in-out firemovement infinite;
+    }
+
+    /* Delay the fire-elements depending on the animation speed */
+    &__fireMiddle{
+        animation-delay: $fire-speed - ($fire-speed/3);
+    }
+    &__fireLower{
+        animation-delay: $fire-speed - 2 * ($fire-speed/3);
+    }
+    
+}
+
+/* Style the Text */
+.text{
+    align-self: flex-start;
+    justify-self: center;
+    width: 90%;
+    
+    &__phrase{
+        text-align: center;
+        background-clip: border-box;
+        background: -webkit-linear-gradient($secondary-color, #38495a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* Style the Buttons */
+.buttons{
+
+    justify-self: center;
+    z-index: 2;
+    @include flex-setting(row nowrap, space-around, flex-start);
+    @include box-setting(80%, 100%);
+
+    &__button{
+        width: 10em;
+        height: 4em;
+        border-radius: 20px;
+       
+    }
+}

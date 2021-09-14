@@ -1,0 +1,70 @@
+/* Handles the State Changes of the Main Landingpage */
+
+@import "../module/animations";
+@import "../module/vars";
+/* When Hovering over the Card */
+.card:hover, .card:focus-within{
+    .card{
+
+        /* Move the Image up and scale it down */
+        &__front{
+            border: 10px solid $primary-color;
+            transition: .3s;
+            transform: translateY(-30%) scale(0.7);
+        }
+
+        /* Remove the blur effect on the image */
+        &__img{
+            transition: .3s;
+            filter: blur(0px);
+            -webkit-filter: blur(0px);
+        }
+
+        /* white Background appears from the back */
+        &__background{
+            opacity: 1;
+            transition: .3s;
+        }
+
+        /* display the back-content */
+        &__back{
+            opacity: 1;
+            transition: .3s;
+            height: 100%;
+            transform: translateY(-6em)
+        }
+        
+        /* Move the Year inside the back-content */
+        &__year{
+            left: 0;
+            width: 97.5%;
+            transition: .3s;
+            color: $primary-color;
+            transform: translate(4.2em, 8.1em);
+        }
+       
+        /* Move the title inside the back-content */
+        &__title{
+            text-shadow: none;
+            animation: movetitle .3s forwards;
+            color: $primary-color;
+            border-bottom: solid 1px $primary-color;
+
+        }
+    }
+}
+
+.mainheader__navelement:hover{
+    transition: 250ms ease-in-out;
+    &::before{
+        transform: scaleX(1)
+    }
+
+    .mainheader__navlink{
+        color: $primary-color;
+    }
+}
+
+.card__link:hover{
+    color: $quaternary-color;
+}

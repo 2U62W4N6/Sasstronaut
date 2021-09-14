@@ -1,0 +1,50 @@
+/* Grid for the Page Layout (universal for all pages) */
+
+
+@import "../module/vars";
+
+.page{
+
+    /* Fill the whole View */
+    min-height: 100vh;
+
+    /* Grid Template */
+    display: grid;
+    grid-template:
+        "." $header-height
+        "main_area" minmax(50em, 1fr)
+        "footer_area" 50px;
+
+    /* Attribute 'fixed' doesn't work on Grid-Items.
+    Header needs to be adjusted differently in the Grid-Template */
+    &__header{
+        z-index: 2;
+        position: fixed;
+        top:0;
+        left:0;
+
+        height: $header-height;
+        width: 100%; 
+    }
+
+    &__main{
+        padding-top: 1px;
+        padding-bottom: 1px;
+        z-index: 0;
+        grid-area: main_area;
+    }
+
+    &__footer{
+        
+        z-index: 2;
+        grid-area: footer_area;
+    }
+
+    /* Empty Container which will contain absoulte items.
+    Will be used to create the Star-Background */
+    &__stars{
+        z-index: 1;
+        height: 0%;
+        width: 0%;
+    }
+}

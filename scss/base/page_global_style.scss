@@ -1,0 +1,139 @@
+/* Base Style for the Page / Global Elements */
+@use "../state/page_global_state";
+@use "../module/reset";
+@use "../module/fonts";
+@import "../module/vars";
+@import "../module/mixins";
+@import "../module/animations";
+
+
+/* Backgroudn of Main for each Page */
+.main{
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+
+    position: relative;
+    overflow: hidden;
+
+    &__starbackground{
+        height: 0%;
+        z-index: 1;
+        top: -400vh;
+        position: absolute;
+    }
+
+    &__smallstars{
+        @include createStars(1px, 500);
+        animation: starflow unquote('#{$star_speed}s') linear infinite;
+        &::after{
+            top: -200vh;
+            content: "";
+            @include createStars(1px, 500);
+        }
+    }
+
+    &__mediumstars{
+        position: absolute;
+        @include createStars(2px, 200);
+        animation: starflow unquote('#{$star_speed * 2}s') linear infinite;
+        &::after{
+            top: -200vh;
+            content: "";
+            @include createStars(2px, 200);
+        }
+    }
+
+    &__bigstars{
+        position: absolute;
+        @include createStars(3px, 50);
+        animation: starflow unquote('#{$star_speed * 3}s') linear infinite;
+        &::after{
+            top: -200vh;
+            content: "";
+            @include createStars(3px, 50);
+        }
+    }
+
+
+    
+}
+
+
+
+/* Header for each Page */
+.pageheader{
+
+    @include box-setting(100%, $header-height, $background: $secondary-color, $padding: 0 1em);
+    @include flex-setting(row nowrap, center, center);
+    
+    border-bottom: 1px solid $primary-color;
+
+    &__homelink{
+        margin: 0 0.5em;
+        text-align: center;
+        color: $primary-color;
+        font-size: 24px;
+    }
+
+    &__logo{
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+    }
+
+    &__buttons{
+        justify-self: flex-end;
+        width: 90%;
+        @include flex-setting(row nowrap, flex-end);
+    }
+
+    &__button{
+        height: 35px;
+        width: 80px;
+        font-size: 12px;
+        border-radius: 20px;
+        border: 2px solid $primary-color;
+    }
+}
+
+/* Footer for each Page */
+.page__footer{
+    background-color: $secondary-color;
+    @include flex-setting(row nowrap, space-between, center);
+    padding: 0 1.5em;
+}
+
+
+/* Global styling for all Buttons */
+.btn{
+    border: 2px solid white;
+    background-clip: transparent;
+    background: linear-gradient(45deg,$primary-color 50%, $secondary-color 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    cursor: pointer;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right:0;
+        background: linear-gradient(45deg, $secondary-color 50%, $primary-color 50%);
+        z-index: -1;
+        border-radius: 20px;
+    }
+}
+
+.btn, .btn::after{
+    background-size: 300%;
+    background-position: 100%;
+    transition: 1s;
+}
+
+
+
+
+
+

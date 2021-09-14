@@ -1,0 +1,36 @@
+/* Font-File */
+/* Defines the Font-Size and the Font-Family for all pages*/
+
+@import "./vars";
+
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+}
+
+*{
+    font-family: Roboto
+}
+
+h1{
+    font-size: $main-font-size;
+}
+
+h2, h3{
+    font-size: $main-font-size * .9;
+}
+
+h4, h5{
+    font-size: $main-font-size * .8;
+}
+
+button, a{
+    font-size: $main-font-size * 0.4;
+    font-weight: bold;
+}
+
+p{
+    font-size: $main-font-size * 0.35
+}
+
+

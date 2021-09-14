@@ -1,0 +1,352 @@
+/* Handles the State Changes of the Main Landingpage */
+/* Animation-File */
+/* All used Animation will be stored here */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Shake-Animation on the Landingpage-Logo */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+/* Rocketfire-Animation on the Landingpage-Logo */
+@keyframes firemovement {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(6.3em, -0.5em);
+  }
+}
+/* Rocket-Animation on the Landingpage-Logo */
+@keyframes move_down {
+  from {
+    transform: translateY(-3.8em);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/* Rocket-Animation on the Landingpage-Logo */
+@keyframes move_up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3.8em);
+  }
+}
+/* Star-Animation on the whole Background */
+@keyframes starflow {
+  to {
+    transform: translateY(400vh);
+  }
+}
+/* Title Movement from the center of image to the box below (Card) */
+@keyframes movetitle {
+  0% {
+    text-align: center;
+    opacity: 1;
+  }
+  20% {
+    text-align: center;
+    opacity: 0;
+  }
+  50% {
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    top: 9em;
+    transform: scale(1.42);
+    color: black;
+  }
+  100% {
+    width: 100%;
+    text-align: left;
+    opacity: 1;
+    top: 12.3em;
+    transform: scale(1.42);
+    color: black;
+  }
+}
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* When Hovering over the Card */
+.card:hover .card, .card:focus-within .card {
+  /* Move the Image up and scale it down */
+  /* Remove the blur effect on the image */
+  /* white Background appears from the back */
+  /* display the back-content */
+  /* Move the Year inside the back-content */
+  /* Move the title inside the back-content */
+}
+.card:hover .card__front, .card:focus-within .card__front {
+  border: 10px solid black;
+  transition: 0.3s;
+  transform: translateY(-30%) scale(0.7);
+}
+.card:hover .card__img, .card:focus-within .card__img {
+  transition: 0.3s;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+.card:hover .card__background, .card:focus-within .card__background {
+  opacity: 1;
+  transition: 0.3s;
+}
+.card:hover .card__back, .card:focus-within .card__back {
+  opacity: 1;
+  transition: 0.3s;
+  height: 100%;
+  transform: translateY(-6em);
+}
+.card:hover .card__year, .card:focus-within .card__year {
+  left: 0;
+  width: 97.5%;
+  transition: 0.3s;
+  color: black;
+  transform: translate(4.2em, 8.1em);
+}
+.card:hover .card__title, .card:focus-within .card__title {
+  text-shadow: none;
+  animation: movetitle 0.3s forwards;
+  color: black;
+  border-bottom: solid 1px black;
+}
+
+.mainheader__navelement:hover {
+  transition: 250ms ease-in-out;
+}
+.mainheader__navelement:hover::before {
+  transform: scaleX(1);
+}
+.mainheader__navelement:hover .mainheader__navlink {
+  color: black;
+}
+
+.card__link:hover {
+  color: #e97b15;
+}
+
+/* Base Style for the Documentpage */
+/* Mixin-File */
+/* Modules for recurring patterns to write less css code */
+/* Functions to help out expensive calculations */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Mixin to define all nesseccary flex-settings of an element*/
+/* Mixin to define all nesseccary box-settings of an element*/
+/* Mixin to create $number of box-shadow, with size of $width, which will act as 'stars' */
+/* Function to calculate the position for each star - with $secondary-color color */
+/* X-Position will be a random position from 0 - 100vw */
+/* Y-Position will be a random position from -XXX to YYY (outside of the view)*/
+/* Function to define $number of values for the box-shadow */
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+/* Side/Upper Navbar of the Main*/
+.mainheader {
+  background: #6e6e6e;
+}
+.mainheader__nav {
+  width: 100%;
+  list-style: none;
+}
+.mainheader__title {
+  width: 100%;
+  text-align: center;
+  margin: 1em 0;
+  color: white;
+}
+.mainheader__navlist {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.mainheader__navelement {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  width: 240px;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  position: relative;
+  z-index: 1;
+}
+.mainheader__navelement::before {
+  transition: 250ms;
+  z-index: -1;
+  background-color: white;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.mainheader__navlink {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Maincontent (Cards) of the Main*/
+.card {
+  z-index: 4;
+  position: relative;
+  justify-self: center;
+  width: 450px;
+  padding: 1.5em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  /* Year as absolute, so it can be moved inside the content-block */
+  /* Title as absolute, so it can be moved inside the content-block */
+  /* Blur img */
+  /* Hide Back-Content until hover */
+  /* Hide Background until hover */
+}
+.card__year {
+  align-self: flex-end;
+  width: 97.5%;
+  text-align: center;
+  color: white;
+  transition: 0.3s;
+}
+.card__title {
+  position: absolute;
+  top: 45%;
+  z-index: 1;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  transition: 0.3s;
+}
+.card__front {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: black;
+  border: solid white 5px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  justify-self: flex-start;
+  transition: 0.3s;
+}
+.card__img {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: solid black 0px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+.card__back {
+  opacity: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  height: 0px;
+}
+.card__text {
+  padding: 0 1em;
+  text-align: left;
+  width: 100%;
+}
+.card__link {
+  padding: 1em;
+  width: 100%;
+  color: black;
+  text-decoration: underline;
+}
+.card__headline {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 0.8em;
+  border-bottom: solid black 1px;
+  margin-bottom: 1em;
+}
+.card__background {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 10%;
+  bottom: 0;
+  z-index: -1;
+  width: auto;
+  height: 85%;
+  background: white;
+  border: solid black 5px;
+  border-radius: 90px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+/*# sourceMappingURL=main_document_style.css.map */

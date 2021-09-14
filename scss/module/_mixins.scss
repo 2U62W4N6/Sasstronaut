@@ -1,0 +1,49 @@
+/* Mixin-File */
+/* Modules for recurring patterns to write less css code */
+/* Functions to help out expensive calculations */
+@import "../module/vars";
+/* Mixin to define all nesseccary flex-settings of an element*/
+@mixin flex-setting($flex-flow, $justify-content: center, $align-items: center){
+  display: flex;
+  flex-flow: $flex-flow;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+/* Mixin to define all nesseccary box-settings of an element*/
+@mixin box-setting($width: auto, $height: auto, $background: transparent, $padding: 0, $margin:0, $color: $primary-color, $border-width: 0px, $border-radius:0){
+  width: $width;
+  height: $height;
+  background: $background;
+  border: solid $color $border-width;
+  border-radius: $border-radius;
+  padding: $padding;
+  margin: $margin;
+}
+
+
+/* Mixin to create $number of box-shadow, with size of $width, which will act as 'stars' */
+@mixin createStars($size, $number){
+  width: $size;
+  height: $size;
+  background: transparent;
+  box-shadow: box-shadow($number);
+
+}
+
+/* Function to calculate the position for each star - with $secondary-color color */
+/* X-Position will be a random position from 0 - 100vw */
+/* Y-Position will be a random position from -XXX to YYY (outside of the view)*/
+@function generator(){
+    @return '#{random(100)}vw #{random(600)}vh #{$secondary-color}';
+}
+
+/* Function to define $number of values for the box-shadow */
+@function box-shadow($number){
+
+  $result: generator();
+  @for $i from 1 through $number{
+      $result: '#{$result}, #{generator()}';
+  }
+  @return unquote($result);
+}

@@ -1,0 +1,31 @@
+/* Font-File */
+/* Defines the Font-Size and the Font-Family for all pages*/
+/* Variables-File */
+/* Assign values to variables which will be used on multiple scss-files */
+/* Main font size */
+/* All used Colors */
+/* Height of the Header for all Pages */
+/* Animation Speed of the Rocket-Fire on the Landingpage */
+
+h1 {
+  font-size: 42px;
+}
+
+h2, h3 {
+  font-size: 37.8px;
+}
+
+h4, h5 {
+  font-size: 33.6px;
+}
+
+button, a {
+  font-size: 16.8px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 14.7px;
+}
+
+/*# sourceMappingURL=fonts.css.map */
